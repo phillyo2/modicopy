@@ -37,7 +37,7 @@ function modicopy(original) {
           return Array.isArray(updateObject) ? Object.values({ ...updateObject, ...data }) : { ...updateObject, ...data }
         if (apply) 
           return data( resolveLayer(keyChain, original))
-        if (remove){
+        if (remove){  
           const r = {...updateObject}
           data.forEach(key => {
             delete r[key]
