@@ -11,6 +11,7 @@ function modicopy(original) {
       $obj.$concat = w(updateObj, {concat: true})
       $obj.$push = w(updateObj, {push: true})
     } 
+    $obj.$copy = w(updateObj, {copy: true})
 
     for (var k in updateObj) {
       Object.defineProperty($obj, k, { get: addToChain(k, updateObj) })
@@ -25,7 +26,7 @@ function modicopy(original) {
   }
 
   var w = (obj, options = {}) => (data) => {
-    const {merge, apply, concat, push, remove} = options 
+    const {merge, apply, concat, push, remove, copy} = options 
     const updateKey = keyChain[keyChain.length - 1]
     const keyStructure = Array.isArray(original) ? [] : {}
     const isBase = updateKey === undefined
@@ -47,9 +48,11 @@ function modicopy(original) {
           return [...updateObject, ...data ] 
         if (push) 
           return [...updateObject, data]
-      //if (set)
+        if (copy)
+          return Array.isArray(updateObject) ? Object.values({...updateObject }) : {...updateObject }
+        //if (set)
           return data
-      
+          
     }
 
     if (isBase) {
