@@ -1,6 +1,6 @@
 {
   "name": "modicopy",
-  "version": "1.0.6",
+  "version": "1.0.6a",
   "description": "Provides a simple way to make and modify a copy of a standard JavaScript Object { } or Array [ ] without modifying the original",
   "main": "modicopy.js",
   "scripts": {

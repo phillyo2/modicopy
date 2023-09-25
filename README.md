@@ -9,7 +9,7 @@ npm install modicopy
 
 ## Before using modicopy
 
-First off i need to explain what i mean when i say copy
+First off i need to explain what i mean when i say *"copy"*
 
 **copy:** `to create an object with a new reference in memory that contains the same values of a provided object`
 
@@ -36,7 +36,8 @@ It looks something like this
 ```
 import modicopy from 'modicopy'
 
-c
+const original = {a: [1]}
+const updatedCopy = modicopy(original).a.$push(2)
 
 console.log(original) // {a: [1]}
 console.log(updatedCopy) // {a: [1, 2]}
@@ -81,7 +82,7 @@ The Object returned from the modicopy function looks like this
 const original = {a: {b: "hello"}}
 const updatedCopy = modicopy(original).a.$set("goodbye") //{a: {b: "goodbye"}}
 ```
-**$merge**: `updates the layer that the functions is called on by perfomring the functionality of that of {...original, ...copy} / Object.assign({}, original, copy)`
+**$merge**: `updates the layer that the functions is called on by perfomring the functionality of that of {...original, ...copy} / Object.assign({}, original, copy)` *(only run this if the layer is an array or object otherwise weird things can happen)*
 ```
 const original = {a: {b: {c:"hello"}}
 const updatedCopy = modicopy(original).a.$merge({d: "goodbye"}) //{a: {b: {c: "hello", d:"goodbye"}}
@@ -96,7 +97,7 @@ const updatedCopy = modicopy(original).a.$apply((original)=>original * 2) //{a: 
 const original = {a: {b: "hello"}}
 const updatedCopy = modicopy(original).a.$remove(['b']) //{a: {}}
 ```
-**$copy**: `copies the entire layer that it is called on and gives it a new reference in memory`
+**$copy**: `copies the entire layer that it is called on and gives it a new reference in memory` *(only run this if the layer is an array or object otherwise weird things can happen)*
 ```
 const original = {a: {b: "hello"}}
 const updatedCopy = modicopy(original).a.$copy("goodbye") //{a: {b: "goodbye"}}
