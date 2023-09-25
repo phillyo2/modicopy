@@ -1,4 +1,4 @@
-import modicopy from '../index'
+import modicopy from '../modicopy'
 
 describe('modicopy', ()=>{
     describe('$push', ()=>{

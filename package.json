@@ -1,8 +1,8 @@
 {
   "name": "modicopy",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Provides a simple way to make and modify a copy of a standard JavaScript Object { } or Array [ ] without modifying the original",
-  "main": "index.js",
+  "main": "modicopy.js.js",
   "scripts": {
     "test": "jest"
   },
@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/phillyo2/modicopy#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
