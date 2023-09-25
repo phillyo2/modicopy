@@ -1,0 +1,31 @@
+{
+  "name": "modicopy",
+  "version": "1.0.0",
+  "description": "Provides a simple way to make and modify a copy of a standard JavaScript Object { } or Array [ ] without modifying the original",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phillyo2/modicopy.git"
+  },
+  "keywords": [
+    "immutable"
+  ],
+  "author": "Phillip Ward (phillyo2)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phillyo2/modicopy/issues"
+  },
+  "homepage": "https://github.com/phillyo2/modicopy#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "jest": "^22.4.3",
+    "mocha": "^5.0.5",
+    "regenerator-runtime": "^0.11.1"
+  }
+}
